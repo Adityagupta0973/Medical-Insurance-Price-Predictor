@@ -44,7 +44,7 @@ export const authLogout = () => {
     if (token === undefined){
         localStorage.removeItem('expirationDate');
     } else {
-        axios.post(`${settings.API_SERVER}/api/auth/logout/`, {
+        axios.post(`${process.env.REACT_APP_API_URL}/api/auth/logout/`, {
         }, {headers: {'Authorization': `Token ${token}`}} ).then(res => {console.log(res)}).catch(err => {console.log(err)});
         localStorage.removeItem('token');
         localStorage.removeItem('expirationDate');
@@ -71,7 +71,7 @@ export const authCheckTimeout = expirationTime => {
 export const authLogin = (username, password) => {
     return dispatch => {
         dispatch(authStart());
-        axios.post(`${settings.API_SERVER}/api/auth/login/`, {
+        axios.post(`${process.env.REACT_APP_API_URL}/api/auth/login/`, {
             username: username,
             password: password
         })
