@@ -147,7 +147,7 @@ SITE_ID = 1
     ##  IMPORT LOCAL SETTINGS ##
 #########################################
 
-try:
-    from .local_settings import * 
-except ImportError: 
-    pass 
+# try:
+#     from .local_settings import * 
+# except ImportError: 
+#     pass 
