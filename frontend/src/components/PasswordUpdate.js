@@ -58,7 +58,7 @@ function PasswordUpdate({ token }) {
 
     try {
       const headers = { Authorization: `Token ${token}` };
-      const url = `${settings.API_SERVER}/api/auth/update_password/`;
+      const url = `${process.env.REACT_APP_API_URL}/api/auth/update_password/`;
 
       const response = await axios.post(url, {
         new_password1: newPassword1,
