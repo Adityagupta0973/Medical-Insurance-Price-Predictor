@@ -37,7 +37,7 @@ function Home({ token }) {
         smoker: inputs.smoker === 'yes' ? 1 : 0,
       };
   
-      const response = await axios.post(`${settings.API_SERVER}/api/predict/`, requestData, {
+      const response = await axios.post(`${process.env.REACT_APP_API_URL}/api/predict/`, requestData, {
         headers: { Authorization: `Token ${token}` },
       });
   
