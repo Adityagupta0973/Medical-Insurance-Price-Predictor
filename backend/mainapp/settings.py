@@ -28,6 +28,11 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['medical-insurance-price-predictor-backend.onrender.com', 'localhost', '127.0.0.1']
 
+CORS_ALLOWED_ORIGINS = [
+    "https://medical-insurance-price-predictor.vercel.app",
+]
+CORS_ALLOW_CREDENTIALS = True
+
 # Application definition
 
 INSTALLED_APPS = [
