@@ -23,15 +23,15 @@ class APILoginView(LoginView):
 class APIPasswordUpdateView(PasswordChangeView):
     authentication_classes = [TokenAuthentication]
 
-from django.contrib.auth.models import User
-from django.http import JsonResponse
+# from django.contrib.auth.models import User
+# from django.http import JsonResponse
 
-def create_temp_user(request):
-    if request.method == "GET":
-        if not User.objects.filter(username="User1").exists():
-            User.objects.create_user(username="User1", password="testing321")
-            return JsonResponse({"status": "✅ User 'User1' created with password 'testing321'"})
-        else:
-            return JsonResponse({"status": "ℹ️ User 'User1' already exists"})
-    else:
-        return JsonResponse({"error": "Only GET method allowed"}, status=405)
+# def create_temp_user(request):
+#     if request.method == "GET":
+#         if not User.objects.filter(username="User1").exists():
+#             User.objects.create_user(username="User1", password="testing321")
+#             return JsonResponse({"status": "✅ User 'User1' created with password 'testing321'"})
+#         else:
+#             return JsonResponse({"status": "ℹ️ User 'User1' already exists"})
+#     else:
+#         return JsonResponse({"error": "Only GET method allowed"}, status=405)
